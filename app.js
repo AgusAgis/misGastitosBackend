@@ -5,8 +5,9 @@ const express = require('express');
 const app = express();
 const port = 8080;
 
-// Importamos las rutas de gastos
+// Importamos las rutas de gastos y categorias
 const gastosRoutes = require('./routes/gastos.routes');
+const categoriasRoutes = require('./routes/categorias.routes');
 
 // Middleware
 // Para parsear JSON en el cuerpo de las peticiones (POST, PUT)
@@ -22,6 +23,7 @@ app.use(express.static('public'));
 
 // Usamos el router de gastos para todas las peticiones que empiecen con '/gastos'
 app.use('/gastos', gastosRoutes);
+app.use('/categorias', categoriasRoutes);
 
 
 // Inicialización del servidor
@@ -32,5 +34,12 @@ app.listen(port, () => {
     GET /gastos/:id
     POST /gastos 
     PUT /gastos/:id 
-    DELETE /gastos/:id`);
+    DELETE /gastos/:id
+
+    GET /categorias
+    GET /categorias/:id
+    POST /categorias 
+    PUT /categorias/:id 
+    DELETE /categorias/:id
+    `);
 });
