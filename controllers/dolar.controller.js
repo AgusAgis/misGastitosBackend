@@ -16,25 +16,25 @@ const getCotizacionesController = async (req, res) => {
  */
 const getConversionController = async (req, res) => {
     // Ej: ?monto=50&tipo=tarjeta&moneda=USD
-    const { monto, tipo, moneda } = req.body; 
+    const { montoOriginal, tipoConversion, monedaOriginal } = req.body; 
 
-    if (!monto || !tipo || !moneda) {
-        return res.status(400).json({ error: 'Faltan parámetros: monto, tipo, moneda' });
+    if (!montoOriginal || !tipoConversion || !monedaOriginal) {
+        return res.status(400).json({ error: 'Faltan parámetros: montoOriginal, tipoConversion, monedaOriginal' });
     }
     
-    if (moneda !== 'USD') {
-        return res.json({ montoConvertido: parseFloat(monto) }); // No necesita conversión
+    if (monedaOriginal !== 'USD') {
+        return res.json({ montoConvertido: parseFloat(montoOriginal) }); // No necesita conversión
     }
 
     try {
         const cotizaciones = await dolarService.getCotizaciones(); // Usa el caché
-        const tipoDolar = cotizaciones.find(c => c.casa === tipo);
+        const tipoDolar = cotizaciones.find(c => c.casa === tipoConversion);
 
         if (!tipoDolar) {
             return res.status(404).json({ error: 'Tipo de cotización no válido' });
         }
 
-        const montoConvertido = parseFloat(monto) * tipoDolar.venta;
+        const montoConvertido = parseFloat(montoOriginal) * tipoDolar.venta;
         res.json({ montoConvertido: Math.round(montoConvertido * 100) / 100 });
 
     } catch (error) {

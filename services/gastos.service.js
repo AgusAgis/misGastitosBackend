@@ -22,14 +22,14 @@ const getGastoById = (id) => {
  */
 const addGasto = async (data) => {
 
-    if (!data.titulo || !data.monto || !data.fecha) {
+    if (!data.titulo || !data.montoOriginal || !data.fecha || !data.monedaOriginal) {
         // Lanza un error que será capturado por el controlador
-        throw new Error("Datos incompletos. Se requieren titulo, monto y fecha.");
+        throw new Error("Datos incompletos. Se requieren titulo, montoOriginal, fecha y monedaOriginal.");
     }
 
     let montoEnARS;
-    const montoOriginal = parseFloat(data.monto);
-    const monedaOriginal = data.moneda; // "ARS" o "USD"
+    const montoOriginal = parseFloat(data.montoOriginal);
+    const monedaOriginal = data.monedaOriginal; // "ARS" o "USD"
     const tipoConversion = data.tipoConversion; // "tarjeta", "blue", etc.
 
     // 2. Lógica de Conversión
