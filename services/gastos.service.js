@@ -88,7 +88,41 @@ const updateGasto = async (id, data) => {
         fecha: data.fecha || gastoExistente.fecha,
         // ... (Aquí iría la lógica completa si se puede cambiar el monto)
     };
+// 3. Verificar si el monto está siendo actualizado
+    // Si el frontend envía un 'montoOriginal', recalculamos todo.
+    if (data.montoOriginal) {
+        
+        if (!data.monedaOriginal) {
+            throw new Error("Para actualizar el monto, se debe proveer 'monedaOriginal'.");
+        }
 
+        const montoOriginal = parseFloat(data.montoOriginal);
+        const monedaOriginal = data.monedaOriginal;
+        const tipoConversion = data.tipoConversion;
+        let montoEnARS;
+
+        // 4. Re-aplicamos la misma lógica de conversión de addGasto
+        if (monedaOriginal === 'USD') {
+            if (!tipoConversion) {
+                throw new Error("Para un gasto en USD, se requiere un 'tipoConversion'.");
+            }
+            const cotizaciones = await dolarService.getCotizaciones();
+            const tipoDolar = cotizaciones.find(c => c.casa === tipoConversion);
+            if (!tipoDolar) {
+                throw new Error(`Tipo de conversión '${tipoConversion}' no encontrado.`);
+            }
+            montoEnARS = montoOriginal * tipoDolar.venta;
+        } else {
+            montoEnARS = montoOriginal;
+        }
+
+        // 5. Sobreescribimos los campos de monto en el objeto a actualizar
+        datosParaActualizar.montoEnARS = Math.round(montoEnARS * 100) / 100;
+        datosParaActualizar.montoOriginal = montoOriginal;
+        datosParaActualizar.monedaOriginal = monedaOriginal;
+        datosParaActualizar.tipoConversion = monedaOriginal === 'USD' ? tipoConversion : null;
+    }
+    
     return gastosModel.update(id, datosParaActualizar);
 };
 
