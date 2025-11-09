@@ -1,5 +1,4 @@
-// controllers/dolar.controller.js
-const dolarService = require('../services/dolar.service'); // Importa la capa de Servicio
+const dolarService = require('../services/dolar.service');
 
 
 const getCotizacionesController = async (req, res) => {
@@ -15,7 +14,7 @@ const getCotizacionesController = async (req, res) => {
  * GET /dolar/convertir - Calcula una conversión en vivo.
  */
 const getConversionController = async (req, res) => {
-    // Ej: ?monto=50&tipo=tarjeta&moneda=USD
+    // Ej: ?monto=50&tipoConversion=tarjeta&moneda=USD
     const { monto, tipoConversion, moneda } = req.query; 
 
     if (!monto || !tipoConversion || !moneda) {

@@ -32,7 +32,7 @@ const getGasto = (req, res) => {
 /**
  * Handler para POST /gastos - Incorpora un nuevo gasto.
  */
-const createGasto = async (req, res) => { // <-- async
+const createGasto = async (req, res) => {
     try {
         // El body ahora espera: { categoria, monto, fecha, moneda, tipoConversion}
         const newGasto = await gastosService.addGasto(req.body);
@@ -46,7 +46,7 @@ const createGasto = async (req, res) => { // <-- async
 /**
  * Handler para PUT /gastos/:id - Actualiza un gasto por su ID.
  */
-const updateGastoController = async (req, res) => { // <-- async
+const updateGastoController = async (req, res) => {
     try{
         const id = parseInt(req.params.id);
 
@@ -54,7 +54,7 @@ const updateGastoController = async (req, res) => { // <-- async
           return res.status(400).json({ error: 'ID inválido' });
         }
 
-        const updatedGasto = await gastosService.updateGasto(id, req.body); // <-- await
+        const updatedGasto = await gastosService.updateGasto(id, req.body);
 
         if (updatedGasto) {
             res.json(updatedGasto);

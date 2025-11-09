@@ -72,11 +72,7 @@ const addGasto = async (data) => {
  * Servicio para actualizar un gasto por ID.
  */
 const updateGasto = async (id, data) => {
-    // NOTA: Si el usuario puede editar el monto, aquí debería ir la misma
-    // lógica de conversión que está en `addGasto`.
-    // Por ahora, solo pasamos los datos básicos.
-    
-    // Implementación simple (solo actualiza categoría y fecha):
+
     const gastoExistente = gastosModel.findById(id);
     if (!gastoExistente) {
         return null;
@@ -86,9 +82,9 @@ const updateGasto = async (id, data) => {
         ...gastoExistente,
         categoria: data.categoria || gastoExistente.categoria,
         fecha: data.fecha || gastoExistente.fecha,
-        // ... (Aquí iría la lógica completa si se puede cambiar el monto)
     };
-// 3. Verificar si el monto está siendo actualizado
+
+    // 3. Verificar si el monto está siendo actualizado
     // Si el frontend envía un 'monto', recalculamos todo.
     if (data.monto !== undefined) {
 
