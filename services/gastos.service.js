@@ -22,18 +22,18 @@ const getGastoById = (id) => {
  */
 const addGasto = async (data) => {
 
-    if (!data.titulo || !data.montoOriginal || !data.fecha || !data.monedaOriginal) {
+    if (!data.categoria || !data.monto || !data.fecha || !data.moneda) {
         // Lanza un error que será capturado por el controlador
-        throw new Error("Datos incompletos. Se requieren titulo, montoOriginal, fecha y monedaOriginal.");
+        throw new Error("Datos incompletos. Se requieren categoria, monto, fecha y moneda.");
     }
 
     let montoEnARS;
-    const montoOriginal = parseFloat(data.montoOriginal);
-    const monedaOriginal = data.monedaOriginal; // "ARS" o "USD"
+    const monto = parseFloat(data.monto);
+    const moneda = data.moneda; // "ARS" o "USD"
     const tipoConversion = data.tipoConversion; // "tarjeta", "blue", etc.
 
     // 2. Lógica de Conversión
-    if (monedaOriginal === 'USD') {
+    if (moneda === 'USD') {
         if (!tipoConversion) {
             throw new Error("Para un gasto en USD, se requiere un 'tipoConversion'.");
         }
@@ -48,21 +48,21 @@ const addGasto = async (data) => {
             throw new Error(`Tipo de conversión '${tipoConversion}' no encontrado.`);
         }
         // Usamos el valor de "venta" para la conversión
-        montoEnARS = montoOriginal * tipoDolar.venta;
+        montoEnARS = monto * tipoDolar.venta;
 
     } else {
         // Si la moneda es ARS, la guardamos tal cual
-        montoEnARS = montoOriginal;
+        montoEnARS = monto;
     }
 
     // 3. Preparar el objeto para guardar en el modelo
     const gastoParaGuardar = {
-        titulo: data.titulo,
+        categoria: data.categoria,
         fecha: data.fecha,
         montoEnARS: Math.round(montoEnARS * 100) / 100, // Redondeamos a 2 decimales
-        montoOriginal: montoOriginal,
-        monedaOriginal: monedaOriginal,
-        tipoConversion: monedaOriginal === 'USD' ? tipoConversion : null
+        monto: monto,
+        moneda: moneda,
+        tipoConversion: moneda === 'USD' ? tipoConversion : null
     };
 
     return gastosModel.save(gastoParaGuardar);
@@ -76,7 +76,7 @@ const updateGasto = async (id, data) => {
     // lógica de conversión que está en `addGasto`.
     // Por ahora, solo pasamos los datos básicos.
     
-    // Implementación simple (solo actualiza título y fecha):
+    // Implementación simple (solo actualiza categoría y fecha):
     const gastoExistente = gastosModel.findById(id);
     if (!gastoExistente) {
         return null;
@@ -84,25 +84,25 @@ const updateGasto = async (id, data) => {
     
     const datosParaActualizar = {
         ...gastoExistente,
-        titulo: data.titulo || gastoExistente.titulo,
+        categoria: data.categoria || gastoExistente.categoria,
         fecha: data.fecha || gastoExistente.fecha,
         // ... (Aquí iría la lógica completa si se puede cambiar el monto)
     };
 // 3. Verificar si el monto está siendo actualizado
-    // Si el frontend envía un 'montoOriginal', recalculamos todo.
-    if (data.montoOriginal) {
-        
-        if (!data.monedaOriginal) {
-            throw new Error("Para actualizar el monto, se debe proveer 'monedaOriginal'.");
+    // Si el frontend envía un 'monto', recalculamos todo.
+    if (data.monto !== undefined) {
+
+        if (!data.moneda) {
+            throw new Error("Para actualizar el monto, se debe proveer 'moneda'.");
         }
 
-        const montoOriginal = parseFloat(data.montoOriginal);
-        const monedaOriginal = data.monedaOriginal;
+        const montoActualizado = parseFloat(data.monto);
+        const moneda = data.moneda;
         const tipoConversion = data.tipoConversion;
         let montoEnARS;
 
         // 4. Re-aplicamos la misma lógica de conversión de addGasto
-        if (monedaOriginal === 'USD') {
+        if (moneda === 'USD') {
             if (!tipoConversion) {
                 throw new Error("Para un gasto en USD, se requiere un 'tipoConversion'.");
             }
@@ -111,16 +111,16 @@ const updateGasto = async (id, data) => {
             if (!tipoDolar) {
                 throw new Error(`Tipo de conversión '${tipoConversion}' no encontrado.`);
             }
-            montoEnARS = montoOriginal * parseFloat(tipoDolar.venta);
+            montoEnARS = montoActualizado * parseFloat(tipoDolar.venta);
         } else {
-            montoEnARS = montoOriginal;
+            montoEnARS = montoActualizado;
         }
 
         // 5. Sobreescribimos los campos de monto en el objeto a actualizar
         datosParaActualizar.montoEnARS = Math.round(montoEnARS * 100) / 100;
-        datosParaActualizar.montoOriginal = montoOriginal;
-        datosParaActualizar.monedaOriginal = monedaOriginal;
-        datosParaActualizar.tipoConversion = monedaOriginal === 'USD' ? tipoConversion : null;
+        datosParaActualizar.monto = montoActualizado;
+        datosParaActualizar.moneda = moneda;
+        datosParaActualizar.tipoConversion = moneda === 'USD' ? tipoConversion : null;
     }
 
     return gastosModel.update(id, datosParaActualizar);

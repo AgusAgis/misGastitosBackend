@@ -34,7 +34,7 @@ const getGasto = (req, res) => {
  */
 const createGasto = async (req, res) => { // <-- async
     try {
-        // El body ahora espera: { titulo, monto, fecha, moneda, tipoConversion}
+        // El body ahora espera: { categoria, monto, fecha, moneda, tipoConversion}
         const newGasto = await gastosService.addGasto(req.body);
         res.status(201).json(newGasto);
     } catch (error) {
