@@ -76,19 +76,11 @@ const index = gastos.findIndex(gasto => gasto.id === id);
     }
 
     // Aseguramos que solo se actualicen los campos provistos
-    const updatedGasto = { ...gastos[index] };
-
-    if (data.titulo) updatedGasto.titulo = data.titulo;
-    if (data.fecha) updatedGasto.fecha = data.fecha;
-    
-    // Si se actualiza el monto, se debe proveer la lógica de conversión completa
-    if (data.montoEnARS) {
-        updatedGasto.montoEnARS = data.montoEnARS;
-        updatedGasto.montoOriginal = data.montoOriginal;
-        updatedGasto.monedaOriginal = data.monedaOriginal;
-        updatedGasto.tipoConversion = data.tipoConversion;
-    }
-
+    const updatedGasto = { 
+        ...data, // Usamos todos los datos que nos pasa el servicio
+        id: id   // Nos aseguramos que el ID no cambie
+    };
+  
     gastos[index] = updatedGasto;
     return updatedGasto;
 };

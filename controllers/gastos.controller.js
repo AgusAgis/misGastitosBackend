@@ -47,19 +47,24 @@ const createGasto = async (req, res) => { // <-- async
  * Handler para PUT /gastos/:id - Actualiza un gasto por su ID.
  */
 const updateGastoController = async (req, res) => { // <-- async
-    const id = parseInt(req.params.id);
+    try{
+        const id = parseInt(req.params.id);
 
-    if (isNaN(id)) {
-        return res.status(400).json({ error: 'ID inválido' });
+        if (isNaN(id)) {
+          return res.status(400).json({ error: 'ID inválido' });
+        }
+
+        const updatedGasto = await gastosService.updateGasto(id, req.body); // <-- await
+
+        if (updatedGasto) {
+            res.json(updatedGasto);
+        } else {
+            res.status(404).json({ error: 'Gasto no encontrado para actualizar' });
+        }
+    }catch (error) {
+        res.status(400).json({ error: error.message });
     }
-
-    const updatedGasto = await gastosService.updateGasto(id, req.body); // <-- await
-
-    if (updatedGasto) {
-        res.json(updatedGasto);
-    } else {
-        res.status(404).json({ error: 'Gasto no encontrado para actualizar' });
-    }
+    
 };
 
 /**

@@ -111,7 +111,7 @@ const updateGasto = async (id, data) => {
             if (!tipoDolar) {
                 throw new Error(`Tipo de conversión '${tipoConversion}' no encontrado.`);
             }
-            montoEnARS = montoOriginal * tipoDolar.venta;
+            montoEnARS = montoOriginal * parseFloat(tipoDolar.venta);
         } else {
             montoEnARS = montoOriginal;
         }
@@ -122,7 +122,7 @@ const updateGasto = async (id, data) => {
         datosParaActualizar.monedaOriginal = monedaOriginal;
         datosParaActualizar.tipoConversion = monedaOriginal === 'USD' ? tipoConversion : null;
     }
-    
+
     return gastosModel.update(id, datosParaActualizar);
 };
 

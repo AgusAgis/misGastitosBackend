@@ -34,7 +34,7 @@ const getConversionController = async (req, res) => {
             return res.status(404).json({ error: 'Tipo de cotización no válido' });
         }
 
-        const montoConvertido = parseFloat(montoOriginal) * tipoDolar.venta;
+        const montoConvertido = parseFloat(montoOriginal) * parseFloat(tipoDolar.venta);
         res.json({ montoConvertido: Math.round(montoConvertido * 100) / 100 });
 
     } catch (error) {
