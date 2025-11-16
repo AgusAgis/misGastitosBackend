@@ -1,4 +1,6 @@
-const categoriaModel = require('../data/categorias.model'); 
+//const categoriaModel = require('../data/categorias.mem.dao'); 
+const { CategoriasDAO } = require('../data/factory');
+const categoriaModel = CategoriasDAO;
 
 /**
  * obtener todas las categoria realizados.

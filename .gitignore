@@ -4,3 +4,5 @@
 .DS_Store
 uploads/
 .env
+uploads/*
+!uploads/.gitkeep

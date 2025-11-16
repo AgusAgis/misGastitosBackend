@@ -1,5 +1,8 @@
-const gastosModel = require('../data/gastos.model');
+//const gastosModel = require('../data/gastos.mem.dao');
 const dolarService = require('../services/dolar.service');
+
+const { GastosDAO } = require('../data/factory');
+const gastosModel = GastosDAO;
 
 /**
  * obtener todos los gastos realizados.

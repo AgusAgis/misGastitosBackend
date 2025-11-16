@@ -1,11 +1,16 @@
 // app.js (Archivo principal)
 
+// Importamos la configuración
+const { PORT } = require('./config');
+// Importamos la conexión a la DB
+const dbConnection = require('./db/connection');
+
 require('dotenv').config();
 // Importamos Express
 const express = require('express');
 const app = express();
 
-const port = process.env.PORT || 8080;
+const port = PORT;
 
 // Importamos las rutas de gastos y categorias
 const gastosRoutes = require('./routes/gastos.routes');
@@ -30,10 +35,17 @@ app.use('/categorias', categoriasRoutes);
 app.use('/dolar', dolarRoutes);
 app.use('/uploads', express.static('uploads'));
 
-// Inicialización del servidor
-app.listen(port, () => {
-    console.log(`Servidor de gastos escuchando en http://localhost:${port}`);
-    console.log(`Rutas disponibles:
+// ===============================================
+// INICIO ASÍNCRONO DEL SERVIDOR
+// ===============================================
+const startServer = async () => {
+    try {
+        // 1. Conectar a la base de datos
+        await dbConnection();
+        // Inicialización del servidor
+        app.listen(port, () => {
+            console.log(`Servidor de gastos escuchando en http://localhost:${port}`);
+            console.log(`Rutas disponibles:
     GET /gastos
     GET /gastos/:id
     POST /gastos 
@@ -49,4 +61,11 @@ app.listen(port, () => {
     GET/dolar
     GET /dolar/convertir
     `);
-});
+        });
+        } catch (error) {
+        console.error('Error al iniciar el servidor:', error);
+        process.exit(1);
+    }
+};  
+
+startServer();
