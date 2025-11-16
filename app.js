@@ -9,13 +9,21 @@ require('dotenv').config();
 // Importamos Express
 const express = require('express');
 const app = express();
+<<<<<<< HEAD
 
 const port = PORT;
+=======
+const port = 8080;
+const fs = require('fs')
+const path = require('path')
+
+>>>>>>> main
 
 // Importamos las rutas de gastos y categorias
 const gastosRoutes = require('./routes/gastos.routes');
 const categoriasRoutes = require('./routes/categorias.routes');
 const dolarRoutes = require('./routes/dolar.routes.js');
+
 
 // Middleware
 // Para parsear JSON en el cuerpo de las peticiones (POST, PUT)
@@ -24,6 +32,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Servir archivos estáticos
 app.use(express.static('public'));
+
+
+
+///directorio uploads para archivos
+const uploadsDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+  console.log(`Directorio 'uploads' creado en: ${uploadsDir}`);
+}   
 
 // ===============================================
 // MONTAJE DE RUTAS
@@ -60,6 +77,8 @@ const startServer = async () => {
 
     GET/dolar
     GET /dolar/convertir
+
+    GET /uploads
     `);
         });
         } catch (error) {
