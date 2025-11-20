@@ -4,27 +4,35 @@ const gastosService = require('../services/gastos.service');
 /**
  * GET /gastos - todos los gastos
  */
-const getGastos = (req, res) => {
-    const allGastos = gastosService.getAllGastos();
-    res.json(allGastos);
+const getGastos = async (req, res) => {
+    try {
+        const allGastos = await gastosService.getAllGastos();
+        res.json(allGastos);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
 /**
  * GET /gastos/:id - gassto por ID
  */
-const getGasto = (req, res) => {
+const getGasto = async (req, res) => {
     const id = parseInt(req.params.id);
 
     if (isNaN(id)) {
         return res.status(400).json({ error: 'ID inválido' });
     }
 
-    const gasto = gastosService.getGastoById(id);
+    try {
+        const gasto = await gastosService.getGastoById(id);
 
-    if (gasto) {
-        res.json(gasto);
-    } else {
-        res.status(404).json({ error: 'Gasto no encontrado' });
+        if (gasto) {
+            res.json(gasto);
+        } else {
+            res.status(404).json({ error: 'Gasto no encontrado' });
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message });
     }
 };
 
@@ -105,23 +113,27 @@ const updateGastoController = async (req, res) => {
 /**
  * DELETE /gastos/:id - Borra un gasto por su ID.
  */
-const deleteGastoController = (req, res) => {
+const deleteGastoController = async (req, res) => {
     const id = parseInt(req.params.id);
 
     if (isNaN(id)) {
         return res.status(400).json({ error: 'ID inválido' });
     }
 
-    const wasDeleted = gastosService.deleteGasto(id);
+    try {
+        const wasDeleted = await gastosService.deleteGasto(id);
 
-    if (wasDeleted) {
-        res.status(204).send();
-    } else {
-        res.status(404).json({ error: 'Gasto no encontrado para borrar' });
+        if (wasDeleted) {
+            res.status(204).send();
+        } else {
+            res.status(404).json({ error: 'Gasto no encontrado para borrar' });
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message });
     }
 };
 
-const uploadArchivo = (req, res) => {
+const uploadArchivo = async (req, res) => {
     const id = parseInt(req.params.id);
     
     if (isNaN(id)) {
@@ -135,7 +147,7 @@ const uploadArchivo = (req, res) => {
     const rutaArchivo = `/uploads/${req.file.filename}`;
     
     try {
-        const gasto = gastosService.agregarArchivoAGasto(id, rutaArchivo);
+        const gasto = await gastosService.agregarArchivoAGasto(id, rutaArchivo);
         res.status(200).json(gasto);
     } catch (error) {
         res.status(404).json({ error: error.message });

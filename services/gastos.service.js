@@ -7,15 +7,15 @@ const gastosModel = GastosDAO;
 /**
  * obtener todos los gastos realizados.
  */
-const getAllGastos = () => {
-    return gastosModel.findAll();
+const getAllGastos = async () => {
+    return await gastosModel.findAll();
 };
 
 /**
  * obtener un gasto por Id
  */
-const getGastoById = (id) => {
-    return gastosModel.findById(id);
+const getGastoById = async (id) => {
+    return await gastosModel.findById(id);
 };
 
 /**
@@ -74,7 +74,7 @@ const addGasto = async (data) => {
  * actualizar un gasto por ID.
  */
 const updateGasto = async (id, data) => {
-    const gastoExistente = gastosModel.findById(id);
+    const gastoExistente = await gastosModel.findById(id);
     if (!gastoExistente) return null;
 
     const updatedData = {
@@ -102,25 +102,25 @@ const updateGasto = async (id, data) => {
         }
     }
 
-    return gastosModel.update(id, updatedData);
+    return await gastosModel.update(id, updatedData);
 };
 
 /**
  * borrar un gasto por ID.
  */
-const deleteGasto = (id) => {
-    return gastosModel.remove(id);
+const deleteGasto = async (id) => {
+    return await gastosModel.remove(id);
 };
 
-const agregarArchivoAGasto = (id, rutaArchivo) => {
-    const gasto = gastosModel.findById(id);
+const agregarArchivoAGasto = async (id, rutaArchivo) => {
+    const gasto = await gastosModel.findById(id);
     if (!gasto) throw new Error("Gasto no encontrado");
 
     if (!gasto.archivos) gasto.archivos = [];
 
     gasto.archivos.push(rutaArchivo);
 
-    gastosModel.update(id, gasto);
+    await gastosModel.update(id, gasto);
 
     return gasto;
 };
