@@ -1,0 +1,1505 @@
+{
+	"info": {
+		"_postman_id": "fe320539-c865-49c4-a08d-5697a65ba723",
+		"name": "TP2-Spendly-back",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7969977"
+	},
+	"item": [
+		{
+			"name": "getDolarInfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dolar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dolar"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getDolarInfo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/dolar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dolar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "922"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39a-nU+Xf62ToMLrGQKsyDAcXESo2MI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Nov 2025 06:34:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"moneda\": \"USD\",\n        \"casa\": \"oficial\",\n        \"nombre\": \"Oficial\",\n        \"compra\": 1395,\n        \"venta\": 1445,\n        \"fechaActualizacion\": \"2025-11-07T17:02:00.000Z\"\n    },\n    {\n        \"moneda\": \"USD\",\n        \"casa\": \"blue\",\n        \"nombre\": \"Blue\",\n        \"compra\": 1395,\n        \"venta\": 1415,\n        \"fechaActualizacion\": \"2025-11-08T20:58:00.000Z\"\n    },\n    {\n        \"moneda\": \"USD\",\n        \"casa\": \"bolsa\",\n        \"nombre\": \"Bolsa\",\n        \"compra\": 1449.9,\n        \"venta\": 1458,\n        \"fechaActualizacion\": \"2025-11-08T20:58:00.000Z\"\n    },\n    {\n        \"moneda\": \"USD\",\n        \"casa\": \"contadoconliqui\",\n        \"nombre\": \"Contado con liquidación\",\n        \"compra\": 1471,\n        \"venta\": 1474.6,\n        \"fechaActualizacion\": \"2025-11-08T20:58:00.000Z\"\n    },\n    {\n        \"moneda\": \"USD\",\n        \"casa\": \"mayorista\",\n        \"nombre\": \"Mayorista\",\n        \"compra\": 1406,\n        \"venta\": 1415,\n        \"fechaActualizacion\": \"2025-11-07T15:20:00.000Z\"\n    },\n    {\n        \"moneda\": \"USD\",\n        \"casa\": \"cripto\",\n        \"nombre\": \"Cripto\",\n        \"compra\": 1514,\n        \"venta\": 1520,\n        \"fechaActualizacion\": \"2025-11-08T20:58:00.000Z\"\n    },\n    {\n        \"moneda\": \"USD\",\n        \"casa\": \"tarjeta\",\n        \"nombre\": \"Tarjeta\",\n        \"compra\": 1813.5,\n        \"venta\": 1878.5,\n        \"fechaActualizacion\": \"2025-11-07T17:02:00.000Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getExpense",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gastos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gastos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getExpense latest",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gastos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gastos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1533"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5fd-XjOBuHQ8AJTT5BVGnDxqxrcc5BY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 20 Nov 2025 01:59:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"691a3225cda52e4ac5484eb0\",\n        \"nombre\": \"\\\"Factura de Internet\\\"\",\n        \"categoria\": \"\\\"Hogar\\\"\",\n        \"fecha\": \"2025-11-16T03:00:00.000Z\",\n        \"montoEnARS\": 25000,\n        \"monto\": 25000,\n        \"moneda\": \"\\\"ARS\\\"\",\n        \"tipoConversion\": null,\n        \"archivos\": null,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"691a32c4cda52e4ac5484eb2\",\n        \"nombre\": \"Factura de Internet\",\n        \"categoria\": \"Hogar\",\n        \"fecha\": \"2025-11-16T03:00:00.000Z\",\n        \"montoEnARS\": 25000,\n        \"monto\": 25000,\n        \"moneda\": \"ARS\",\n        \"tipoConversion\": null,\n        \"archivos\": null,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"691a3313cda52e4ac5484eb4\",\n        \"nombre\": \"Factura de Internet\",\n        \"categoria\": \"Hogar\",\n        \"fecha\": \"2025-11-16T03:00:00.000Z\",\n        \"montoEnARS\": 21375,\n        \"monto\": 15,\n        \"moneda\": \"USD\",\n        \"tipoConversion\": \"oficial\",\n        \"archivos\": null,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"691a34dfcda52e4ac5484eb6\",\n        \"nombre\": \"Factura de Internet\",\n        \"categoria\": \"Hogar\",\n        \"fecha\": \"2025-11-16T03:00:00.000Z\",\n        \"montoEnARS\": 21375,\n        \"monto\": 15,\n        \"moneda\": \"USD\",\n        \"tipoConversion\": \"oficial\",\n        \"archivos\": \"/uploads/1763325151997-86735424.pdf\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"691e656316d17a93852c5044\",\n        \"nombre\": \"Alquiler\",\n        \"categoria\": \"Hogar\",\n        \"fecha\": \"2025-11-19T03:00:00.000Z\",\n        \"montoEnARS\": 880000,\n        \"monto\": 880000,\n        \"moneda\": \"ARS\",\n        \"tipoConversion\": null,\n        \"archivos\": null,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"691e65a816d17a93852c5046\",\n        \"nombre\": \"Netflix\",\n        \"categoria\": \"Entretenimiento\",\n        \"fecha\": \"2025-11-19T03:00:00.000Z\",\n        \"montoEnARS\": 42900,\n        \"monto\": 30,\n        \"moneda\": \"USD\",\n        \"tipoConversion\": \"blue\",\n        \"archivos\": null,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"691e65bffd40ca46bc166dfb\",\n        \"nombre\": \"Psicologo\",\n        \"categoria\": \"Salud\",\n        \"fecha\": \"2025-11-11T03:00:00.000Z\",\n        \"montoEnARS\": 35000,\n        \"monto\": 35000,\n        \"moneda\": \"ARS\",\n        \"tipoConversion\": null,\n        \"archivos\": null,\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getExpenseById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gastos/691e65a816d17a93852c5046",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gastos",
+						"691e65a816d17a93852c5046"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getExpense Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gastos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gastos",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "130"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"82-NFyQEss3YjqRfPQ2HJmlKirpA80\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Nov 2025 06:34:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"titulo\": \"Play\",\n    \"fecha\": \"2025/11/03\",\n    \"montoEnARS\": 84900,\n    \"montoOriginal\": 60,\n    \"monedaOriginal\": \"USD\",\n    \"tipoConversion\": \"blue\"\n}"
+				},
+				{
+					"name": "getExpenseById - file",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/gastos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gastos",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"be-EU3BD1N96CxHqidXFuiQwuHgKeA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Nov 2025 20:09:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"nombre\": \"ORT\",\n    \"categoria\": \"Educacion\",\n    \"fecha\": \"2025-11-16\",\n    \"montoEnARS\": 295300,\n    \"monto\": 295300,\n    \"moneda\": \"ARS\",\n    \"tipoConversion\": null,\n    \"archivos\": \"/uploads/1763323765725-269172855.pdf\"\n}"
+				}
+			]
+		},
+		{
+			"name": "createExpense",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"categoria\": \"Hogar\",\n    \"nombre\": \"Expensas\",\n    \"fecha\": \"2025/11/19\",\n    \"monto\": 240000, // Monto que ingresó el usuario\n    \"moneda\": \"ARS\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gastos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gastos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "createGastoLatest",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoria\": \"Entretenimiento\",\n    \"nombre\": \"Netflix\",\n    \"fecha\": \"2025/11/19\",\n    \"monto\": 30, // Monto que ingresó el usuario\n    \"moneda\": \"USD\",// Moneda que ingresó el usuario\n    \"tipoConversion\" : \"blue\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/gastos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gastos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "211"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d3-cimqDb5c3AUHS40DmdGoDLjc+sM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 20 Nov 2025 00:49:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Netflix\",\n    \"categoria\": \"Entretenimiento\",\n    \"fecha\": \"2025-11-19T03:00:00.000Z\",\n    \"montoEnARS\": 42900,\n    \"monto\": 30,\n    \"moneda\": \"USD\",\n    \"tipoConversion\": \"blue\",\n    \"archivos\": null,\n    \"_id\": \"691e65a816d17a93852c5046\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "createExpenseLatest2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoria\": \"Hogar\",\n    \"nombre\": \"Expensas\",\n    \"fecha\": \"2025/11/19\",\n    \"monto\": 240000, // Monto que ingresó el usuario\n    \"moneda\": \"ARS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/gastos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gastos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "205"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cd-1JsJ7kDE7BUEPzKgjrsWp0AZ0CA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 20 Nov 2025 02:23:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Expensas\",\n    \"categoria\": \"Hogar\",\n    \"fecha\": \"2025-11-19T03:00:00.000Z\",\n    \"montoEnARS\": 240000,\n    \"monto\": 240000,\n    \"moneda\": \"ARS\",\n    \"tipoConversion\": null,\n    \"archivos\": null,\n    \"_id\": \"691e7b8a0631a8af44cec6cb\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "convertirUsd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"monto\" : 15000,\n    \"tipoConversion\" : \"tarjeta\",\n    \"moneda\" : \"USD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dolar/convertir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dolar",
+						"convertir"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "working conversion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"monto\" : 15000,\n    \"tipoConversion\" : \"tarjeta\",\n    \"moneda\" : \"USD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/dolar/convertir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dolar",
+								"convertir"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-ZDEPFSq7IoNQYsaKeubD+b53jHM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 20 Nov 2025 02:20:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"montoConvertido\": 27885000\n}"
+				},
+				{
+					"name": "convertirUsd",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"monto\" : 15000,\n    \"tipoConversion\" : \"tarjeta\",\n    \"moneda\" : \"USD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/dolar/convertir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dolar",
+								"convertir"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-6OaJy7V9VwLV0tn/pAtwJbLR0Vc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Nov 2025 19:41:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"montoConvertido\": 28275000\n}"
+				}
+			]
+		},
+		{
+			"name": "createExpenseUsd",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"categoria\": \"Entretenimiento\",\n    \"nombre\": \"Battlefield 6\",\n    \"fecha\": \"2025/11/22\",\n    \"monto\": 60,\n    \"moneda\": \"USD\",\n    \"tipoConversion\": \"tarjeta\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gastos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gastos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "latestResopnse",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoria\": \"Entretenimiento\",\n    \"nombre\": \"Battlefield 6\",\n    \"fecha\": \"2025/11/22\",\n    \"monto\": 60,\n    \"moneda\": \"USD\",\n    \"tipoConversion\": \"tarjeta\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/gastos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gastos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "287"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11f-roveuoQYfbGQIxwMEJ1/rXC7tOQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Nov 2025 19:21:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Battlefield 6\",\n    \"categoria\": \"Entretenimiento\",\n    \"fecha\": \"2025-11-22T03:00:00.000Z\",\n    \"imagen\": \"https://cdn-icons-png.flaticon.com/512/4319/4319047.png\",\n    \"montoEnARS\": 113100,\n    \"monto\": 60,\n    \"moneda\": \"USD\",\n    \"tipoConversion\": \"tarjeta\",\n    \"archivo\": null,\n    \"_id\": \"69220d386e15daebfbafc399\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "createExpense FILE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "postman-cloud:///1f0c3200-92d7-4830-86a4-357d72eaf3d1"
+						},
+						{
+							"key": "nombre",
+							"value": "ORT",
+							"type": "text"
+						},
+						{
+							"key": "categoria",
+							"value": "Educacion",
+							"type": "text"
+						},
+						{
+							"key": "fecha",
+							"value": "2025-11-16",
+							"type": "text"
+						},
+						{
+							"key": "monto",
+							"value": "295300",
+							"type": "text"
+						},
+						{
+							"key": "moneda",
+							"value": "ARS",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/gastos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gastos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "createExpense FILE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivo",
+									"type": "file",
+									"src": "postman-cloud:///1f0c3200-92d7-4830-86a4-357d72eaf3d1"
+								},
+								{
+									"key": "nombre",
+									"value": "ORT",
+									"type": "text"
+								},
+								{
+									"key": "categoria",
+									"value": "Educacion",
+									"type": "text"
+								},
+								{
+									"key": "fecha",
+									"value": "2025-11-16",
+									"type": "text"
+								},
+								{
+									"key": "monto",
+									"value": "295300",
+									"type": "text"
+								},
+								{
+									"key": "moneda",
+									"value": "ARS",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/gastos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gastos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"be-EU3BD1N96CxHqidXFuiQwuHgKeA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Nov 2025 20:09:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"nombre\": \"ORT\",\n    \"categoria\": \"Educacion\",\n    \"fecha\": \"2025-11-16\",\n    \"montoEnARS\": 295300,\n    \"monto\": 295300,\n    \"moneda\": \"ARS\",\n    \"tipoConversion\": null,\n    \"archivos\": \"/uploads/1763323765725-269172855.pdf\"\n}"
+				},
+				{
+					"name": "createExpense FILE",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archivo",
+									"type": "file",
+									"src": "postman-cloud:///1f0c3200-92d7-4830-86a4-357d72eaf3d1"
+								},
+								{
+									"key": "nombre",
+									"value": "ORT",
+									"type": "text"
+								},
+								{
+									"key": "categoria",
+									"value": "Educacion",
+									"type": "text"
+								},
+								{
+									"key": "fecha",
+									"value": "2025-11-16",
+									"type": "text"
+								},
+								{
+									"key": "monto",
+									"value": "295300",
+									"type": "text"
+								},
+								{
+									"key": "moneda",
+									"value": "ARS",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/gastos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gastos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"be-EU3BD1N96CxHqidXFuiQwuHgKeA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Nov 2025 20:09:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"nombre\": \"ORT\",\n    \"categoria\": \"Educacion\",\n    \"fecha\": \"2025-11-16\",\n    \"montoEnARS\": 295300,\n    \"monto\": 295300,\n    \"moneda\": \"ARS\",\n    \"tipoConversion\": null,\n    \"archivos\": \"/uploads/1763323765725-269172855.pdf\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getCategories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getCategorias",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "784"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"310-F+SJ0xYh/g6hBtWHYrhmEqaEnG0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Nov 2025 19:23:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"69214f15e8cc2c4bc65e62e6\",\n        \"titulo\": \"Comida\",\n        \"__v\": 0,\n        \"imagen\": \"https://cdn-icons-png.flaticon.com/512/3075/3075977.png\"\n    },\n    {\n        \"_id\": \"69214f15e8cc2c4bc65e62e7\",\n        \"titulo\": \"Entretenimiento\",\n        \"__v\": 0,\n        \"imagen\": \"https://cdn-icons-png.flaticon.com/512/4319/4319047.png\"\n    },\n    {\n        \"_id\": \"692150bfe8cc2c4bc65e62ea\",\n        \"titulo\": \"Transporte\",\n        \"__v\": 0,\n        \"imagen\": \"https://cdn-icons-png.flaticon.com/512/1147/1147931.png\"\n    },\n    {\n        \"_id\": \"692150bfe8cc2c4bc65e62eb\",\n        \"titulo\": \"Educación\",\n        \"__v\": 0,\n        \"imagen\": \"https://cdn-icons-png.flaticon.com/512/3135/3135755.png\"\n    },\n    {\n        \"_id\": \"692150bfe8cc2c4bc65e62ec\",\n        \"titulo\": \"Salud\",\n        \"__v\": 0,\n        \"imagen\": \"https://cdn-icons-png.flaticon.com/512/2966/2966327.png\"\n    },\n    {\n        \"_id\": \"69215edbe8cc2c4bc65e633b\",\n        \"titulo\": \"Hogar\",\n        \"__v\": 0,\n        \"imagen\": \"https://cdn-icons-png.flaticon.com/512/6676/6676728.png\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getCategoriesById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categorias/69214f15e8cc2c4bc65e62e6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"69214f15e8cc2c4bc65e62e6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "byId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categorias/69214f15e8cc2c4bc65e62e6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias",
+								"69214f15e8cc2c4bc65e62e6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "127"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7f-nZhU91lyLFcAamDkBgXs1yha2sc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Nov 2025 19:23:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"69214f15e8cc2c4bc65e62e6\",\n    \"titulo\": \"Comida\",\n    \"__v\": 0,\n    \"imagen\": \"https://cdn-icons-png.flaticon.com/512/3075/3075977.png\"\n}"
+				}
+			]
+		},
+		{
+			"name": "createCateogory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Compras\",\n    \"imagen\" : \"https://www.flaticon.com/free-icon/grocery_1261163?term=grocery&page=1&position=2&origin=search&related_id=1261163\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "newCategory",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Viaje\",\n    \"imagen\" : \"https: //www.flaticon.com/free-icon/travel-luggage_2028454?term=travel&page=1&position=16&origin=search&related_id=2028454\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "193"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c1-8GwjMoLg7brAZk6P9OfbVO74fu0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Nov 2025 19:30:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"titulo\": \"Viaje\",\n    \"imagen\": \"https: //www.flaticon.com/free-icon/travel-luggage_2028454?term=travel&page=1&position=16&origin=search&related_id=2028454\",\n    \"_id\": \"69220f3f6e15daebfbafc39d\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "newCategory",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Compras\",\n    \"imagen\" : \"https://www.flaticon.com/free-icon/grocery_1261163?term=grocery&page=1&position=2&origin=search&related_id=1261163\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bb-16YZpmORumiRPNCO64LfUawc0tc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Nov 2025 19:31:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"titulo\": \"Compras\",\n    \"imagen\": \"https://www.flaticon.com/free-icon/grocery_1261163?term=grocery&page=1&position=2&origin=search&related_id=1261163\",\n    \"_id\": \"69220fa66e15daebfbafc3a0\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "editExpense",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"nombre\": \"Supermercado\",\n        \"categoria\": \"Compras\",\n        \"fecha\": \"2025-11-22\",\n        \"monto\": 34000,\n        \"moneda\": \"ARS\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gastos/691a3313cda52e4ac5484eb4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gastos",
+						"691a3313cda52e4ac5484eb4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "updatedGasto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"nombre\": \"Supermercado\",\n        \"categoria\": \"Compras\",\n        \"fecha\": \"2025-11-22\",\n        \"monto\": 34000,\n        \"moneda\": \"ARS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/gastos/691a3313cda52e4ac5484eb4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gastos",
+								"691a3313cda52e4ac5484eb4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "214"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d6-rQabKmIxTx9c66Gzvzxr9KPtRac\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Nov 2025 19:34:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"691a3313cda52e4ac5484eb4\",\n    \"nombre\": \"Supermercado\",\n    \"categoria\": \"Compras\",\n    \"fecha\": \"2025-11-22T00:00:00.000Z\",\n    \"montoEnARS\": 34000,\n    \"monto\": 34000,\n    \"moneda\": \"ARS\",\n    \"tipoConversion\": \"oficial\",\n    \"archivos\": null,\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "editExpenseAddFile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "Supermercado",
+							"type": "text"
+						},
+						{
+							"key": "categoria",
+							"value": "Compras",
+							"type": "text"
+						},
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/Users/sofialoria/Downloads/receipt_1763493388000.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/gastos/691a3313cda52e4ac5484eb4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gastos",
+						"691a3313cda52e4ac5484eb4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "updatedGasto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"nombre\": \"Supermercado\",\n        \"categoria\": \"Compras\",\n        \"fecha\": \"2025-11-22\",\n        \"monto\": 34000,\n        \"moneda\": \"ARS\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/gastos/691a3313cda52e4ac5484eb4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gastos",
+								"691a3313cda52e4ac5484eb4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "214"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d6-rQabKmIxTx9c66Gzvzxr9KPtRac\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Nov 2025 19:34:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"691a3313cda52e4ac5484eb4\",\n    \"nombre\": \"Supermercado\",\n    \"categoria\": \"Compras\",\n    \"fecha\": \"2025-11-22T00:00:00.000Z\",\n    \"montoEnARS\": 34000,\n    \"monto\": 34000,\n    \"moneda\": \"ARS\",\n    \"tipoConversion\": \"oficial\",\n    \"archivos\": null,\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "editExpenseAddFile",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "Supermercado",
+									"type": "text"
+								},
+								{
+									"key": "categoria",
+									"value": "Compras",
+									"type": "text"
+								},
+								{
+									"key": "archivo",
+									"type": "file",
+									"src": "/Users/sofialoria/Downloads/receipt_1763493388000.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/gastos/691a3313cda52e4ac5484eb4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gastos",
+								"691a3313cda52e4ac5484eb4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "263"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"107-97m26LOGA4xTxXmkurxlA5opMI8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Nov 2025 19:39:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"691a3313cda52e4ac5484eb4\",\n    \"nombre\": \"Supermercado\",\n    \"categoria\": \"Compras\",\n    \"fecha\": \"2025-11-22T00:00:00.000Z\",\n    \"montoEnARS\": 34000,\n    \"monto\": 34000,\n    \"moneda\": \"ARS\",\n    \"tipoConversion\": \"oficial\",\n    \"archivos\": null,\n    \"__v\": 0,\n    \"archivo\": \"/uploads/1763840341592-464141188.pdf\"\n}"
+				}
+			]
+		}
+	]
+}
